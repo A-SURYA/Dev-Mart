@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -25,7 +25,7 @@ function Layout({ children, showFooter = true }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout><Home /></Layout>} />
@@ -33,6 +33,6 @@ export default function App() {
         <Route path="/product/:id" element={<Layout><ProductDetail /></Layout>} />
         <Route path="/dashboard" element={<Layout showFooter={false}><Dashboard /></Layout>} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
